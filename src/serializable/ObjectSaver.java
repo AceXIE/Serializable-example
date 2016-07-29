@@ -20,7 +20,7 @@ public class ObjectSaver {
 	public static void main(String[] args) throws ClassNotFoundException {
 		try {
 			//序列化对象
-			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("E:\\work_eclipse\\Serializable\\objectFile.obj"));
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("objectFile.obj"));
 			
 			Customer customer = new Customer("xiekai", 24);
 			out.writeObject("Hello");
@@ -29,7 +29,7 @@ public class ObjectSaver {
 			out.close();
 			
 			//反序列化
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream("E:\\work_eclipse\\Serializable\\objectFile.obj"));
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("objectFile.obj"));
 			System.out.println("Obj1 " + (String)in.readObject());
 			System.out.println("Obj2 " + (Date)in.readObject());
 			Customer obj3 = (Customer) in.readObject();
@@ -65,3 +65,4 @@ class Customer implements Serializable {
 	}
 	
 }
+
